@@ -32,7 +32,7 @@ body.escuro{
     --bg-desktop: url(../../assets/images/pattern-background-desktop-dark.svg);
     --primary-text-color: #fff;
     --secondry-text-color: #abc1e1;
-    --pontuacao-bg: #3b4d66
+    --pontuacao-bg: #3b4d66;
     --shadow: 0px 16px 40px 0px rgb(49, 62, 81, 0.14);
 }
 
