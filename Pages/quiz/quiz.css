@@ -167,7 +167,7 @@ main{
     background: var(--button-bg);
     padding: 12px;
     font-size: 18px;
-    font-weight: 500;
+     font-weight: 500;
     border-radius: 12px;
     box-shadow: var(--shadow);
     color: var(--primary-text-color);
@@ -175,12 +175,12 @@ main{
 }
 
 .alternativas label:hover{  
-    
+
     & span{
         background: var(--bg-acessibilidade);
         color: var(--purple);
     }
-}
+  }
 
 .alternativas label:has(input:checked){
     outline: 3px solid var(--purple);
@@ -255,7 +255,7 @@ main{
     body{
         background: var(--bg-desktop) var(--bg-color);
         background-size: cover;
-        background-repeat: no-repeat;        
+        background-repeat: no-repeat;
     }
 
     header{
@@ -292,7 +292,7 @@ main{
         height: 20px;
     }
 
-    main{
+     main{
         max-width: 1160px;
         margin-inline: auto;
 
@@ -345,5 +345,4 @@ main{
     .alternativas button{
         font-size: 22px;
     }
-
 }
