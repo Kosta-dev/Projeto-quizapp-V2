@@ -52,7 +52,7 @@ function montarPergunta() {
     <section class="pergunta">
             <div>
                 <p>Questão ${pergunta} de 10</p>
-                <h2>${quiz.questions[pergunta - 1].question}</h2>
+                <h2>${alternarSinais(quiz.questions[pergunta - 1].question)}</h2>
             </div>
             
             <div class="barra_progresso">
@@ -110,7 +110,7 @@ function montarPergunta() {
 }
 
 function alternarSinais(texto) {
-  return texto.replace(/</g, "&lt;").replace(/</g, "&gt;")
+  return texto.replace(/</g, "&lt;").replace(/>/g, "&gt;")
 }
 
 function guardarResposta(evento) {
