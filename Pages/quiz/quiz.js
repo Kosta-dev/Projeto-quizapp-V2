@@ -59,12 +59,14 @@ function montarPergunta() {
                     <div style="width: ${pergunta * 10}%"></div>
             </div>
         </section>
+
         <section class="alternativas">
             <form action="">
                 <label for="alternativa_a">
                     <input type="radio" id="alternativa_a" name="alternativa" value="${alternarSinais(
                       quiz.questions[pergunta - 1].options[0]
                     )}">
+
                     <div>
                         <span>A</span>
                         ${alternarSinais(
@@ -72,8 +74,12 @@ function montarPergunta() {
                         )}
                     </div>
                 </label>
+
                 <label for="alternativa_b">
-                    <input type="radio" id="alternativa_b" name="alternativa">
+                    <input type="radio" id="alternativa_b" name="alternativa" value="${alternarSinais(
+                      quiz.questions[pergunta - 1].options[1]
+                    )}">
+
                     <div>
                         <span>B</span>
                         ${alternarSinais(
@@ -81,10 +87,12 @@ function montarPergunta() {
                         )}
                     </div>
                 </label>
+
                 <label for="alternativa_c">
                     <input type="radio" id="alternativa_c" name="alternativa" value="${alternarSinais(
                       quiz.questions[pergunta - 1].options[2]
                     )}">
+
                     <div>
                         <span>C</span>
                         ${alternarSinais(
@@ -92,10 +100,12 @@ function montarPergunta() {
                         )}
                     </div>
                 </label>
+
                 <label for="alternativa_d">
                     <input type="radio" id="alternativa_d" name="alternativa" value="${alternarSinais(
                       quiz.questions[pergunta - 1].options[3]
                     )}">
+
                     <div>
                         <span>D</span>
                         ${alternarSinais(
@@ -104,6 +114,7 @@ function montarPergunta() {
                     </div>
                 </label>
             </form>
+
             <button>Responder</button>
         </section>
     `
@@ -120,7 +131,7 @@ function guardarResposta(evento) {
     botaoEnviar.addEventListener("click", validarResposta)
 }
 
-function validarResposta(){
+function validarResposta() {
       const botaoEnviar = document.querySelector(".alternativas button")
       botaoEnviar.innerText = "Próxima"
       botaoEnviar.removeEventListener("click", validarResposta)
@@ -133,13 +144,18 @@ function validarResposta(){
         botaoEnviar.addEventListener("click", proximaPergunta)
       }
 
-    if(resposta === quiz.questions[pergunta-1].answer){
-        document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
-        pontos = pontos + 1
-    } else {
-        document.querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "errada")
-        document.querySelector(`label[for='${respostaCorretaId}']`).setAttribute("id", "correta")
-    }
+      if(resposta === quiz.questions[pergunta-1].answer){
+          document
+          .querySelector(`label[for='${idInputResposta}']`).setAttribute("id", "correta")
+          pontos = pontos + 1
+      } else {
+          document
+          .querySelector(`label[for='${idInputResposta}']`)
+          .setAttribute("id", "errada")
+          document
+          .querySelector(`label[for='${respostaCorretaId}']`)
+          .setAttribute("id", "correta")
+      }
     
     pergunta = pergunta + 1
   }
@@ -152,7 +168,7 @@ function finalizar() {
 
 function proximaPergunta() {
   montarPergunta()
-      adicionarEventoInputs()
+  adicionarEventoInputs()
 }
 
 function adicionarEventoInputs() {
